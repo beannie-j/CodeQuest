@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Test
 
 class CandidateEliminationSolverTest {
 
-    private lateinit var solver: CandidateEliminationSolver
+    private lateinit var candidateEliminationSolver: CandidateEliminationSolver
 
     @BeforeEach
     fun setUp() {
-        solver = CandidateEliminationSolver()
+        candidateEliminationSolver = CandidateEliminationSolver()
     }
 
     @Test
@@ -28,7 +28,7 @@ class CandidateEliminationSolverTest {
             mutableListOf(Candidate.PLUTO, Candidate.DONALD, Candidate.MICKEY)
         )
 
-        solver.findMostPopularCandidate(candidates)
+        candidateEliminationSolver.findMostPopularCandidate(candidates)
 
         val expectedFinalList =
             mutableListOf(
@@ -41,11 +41,8 @@ class CandidateEliminationSolverTest {
                 mutableListOf(Candidate.DONALD)
             )
 
-//        val actualFinalList = solver.performElimination(candidates)
+        val mostPopularCandidate = candidateEliminationSolver.findMostPopularCandidate(expectedFinalList)
 
-        val mostPopularCandidate = solver.findMostPopularCandidate(expectedFinalList)
-
-//        assertThat(actualFinalList).isEqualTo(expectedFinalList)
         assertThat(mostPopularCandidate).isEqualTo(Candidate.DONALD)
     }
 }
