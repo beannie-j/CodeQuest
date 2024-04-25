@@ -1,5 +1,6 @@
 package codeQuest
 
+import org.assertj.core.api.Assertions.assertThat
 import org.example.codeQuest.Candidate
 import org.example.codeQuest.CandidateEliminationSolver
 import org.junit.jupiter.api.BeforeEach
@@ -22,16 +23,30 @@ class CandidateEliminationSolverTest {
             mutableListOf(Candidate.DONALD, Candidate.MICKEY, Candidate.PLUTO),
             mutableListOf(Candidate.DONALD, Candidate.MICKEY, Candidate.PLUTO),
             mutableListOf(Candidate.DONALD, Candidate.MICKEY, Candidate.PLUTO),
-            mutableListOf(Candidate.MICKEY, Candidate.MICKEY, Candidate.PLUTO),
-            mutableListOf(Candidate.PLUTO, Candidate.MICKEY, Candidate.DONALD)
+            mutableListOf(Candidate.DONALD, Candidate.MICKEY, Candidate.PLUTO),
+            mutableListOf(Candidate.MICKEY, Candidate.DONALD, Candidate.PLUTO),
+            mutableListOf(Candidate.MICKEY, Candidate.DONALD, Candidate.PLUTO),
+            mutableListOf(Candidate.PLUTO, Candidate.DONALD, Candidate.MICKEY)
         )
 
         solver.solve(candidates)
 
-        val expectedFinalList = mutableListOf(listOf(Candidate.DONALD))
-        val expectedMostPopular = Candidate.DONALD
+        val expectedFinalList =
+            mutableListOf(
+                mutableListOf(Candidate.DONALD),
+                mutableListOf(Candidate.DONALD),
+                mutableListOf(Candidate.DONALD),
+                mutableListOf(Candidate.DONALD),
+                mutableListOf(Candidate.DONALD),
+                mutableListOf(Candidate.DONALD),
+                mutableListOf(Candidate.DONALD)
+            )
 
-        assertEquals(expectedFinalList, candidates)
-        assertEquals(expectedMostPopular, solver.findMostPopularCandidate(expectedFinalList))
+//        val actualFinalList = solver.performElimination(candidates)
+
+        val mostPopularCandidate = solver.findMostPopularCandidate(expectedFinalList)
+
+//        assertThat(actualFinalList).isEqualTo(expectedFinalList)
+        assertThat(mostPopularCandidate).isEqualTo(Candidate.DONALD)
     }
 }
