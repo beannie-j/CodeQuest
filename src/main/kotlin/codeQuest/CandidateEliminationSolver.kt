@@ -3,7 +3,13 @@ package org.example.codeQuest
 class CandidateEliminationSolver {
 
     fun findMostPopularCandidate(candidates: MutableList<MutableList<Candidate>>): Candidate? {
-        val maxIndex = (candidates.firstOrNull()?.size ?: 0) - 1
+        if (candidates.isEmpty() || candidates.firstOrNull()?.isEmpty() == true) {
+            println("List of candidates is empty.")
+            return null
+        }
+
+        val maxIndex = candidates.first().size - 1
+
         var counter = 0
         while (counter < maxIndex) {
             println("Max index: $maxIndex, Counter: $counter")
