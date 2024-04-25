@@ -53,12 +53,13 @@ class CandidateEliminationSolver {
             return
         }
 
-        candidates.forEachIndexed { index, candidateList ->
+        candidates.forEach { candidateList ->
             candidateList.forEach { candidate ->
                 print("$candidate ")
             }
             println()
         }
     }
+
 }
 
