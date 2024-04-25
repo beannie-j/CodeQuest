@@ -5,7 +5,6 @@ import org.example.codeQuest.Candidate
 import org.example.codeQuest.CandidateEliminationSolver
 import org.junit.jupiter.api.BeforeEach
 
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
 class CandidateEliminationSolverTest {
@@ -29,7 +28,7 @@ class CandidateEliminationSolverTest {
             mutableListOf(Candidate.PLUTO, Candidate.DONALD, Candidate.MICKEY)
         )
 
-        solver.solve(candidates)
+        solver.findMostPopularCandidate(candidates)
 
         val expectedFinalList =
             mutableListOf(

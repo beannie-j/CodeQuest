@@ -2,8 +2,15 @@ package org.example.codeQuest
 
 class CandidateEliminationSolver {
 
-    fun solve(candidates: MutableList<MutableList<Candidate>>): Candidate? {
-        return findMostPopularCandidate(candidates)
+    fun findMostPopularCandidate(candidates: MutableList<MutableList<Candidate>>): Candidate? {
+        val maxIndex = (candidates.firstOrNull()?.size ?: 0) - 1
+        var counter = 0
+        while (counter < maxIndex) {
+            println("Max index: $maxIndex, Counter: $counter")
+            performElimination(candidates)
+            counter++
+        }
+        return candidates.firstOrNull()?.firstOrNull()
     }
 
     private fun findLeastPreferredCandidate(candidates: List<List<Candidate>>): Candidate {
@@ -32,20 +39,6 @@ class CandidateEliminationSolver {
         println("Final list after elimination: ")
         prettyPrintList(candidates)
         return candidates
-    }
-
-    fun findMostPopularCandidate(finalList: List<MutableList<Candidate>>): Candidate? {
-        val maxIndex = (finalList.firstOrNull()?.size ?: 0) - 1
-
-        var counter = 0
-
-        while (counter < maxIndex) {
-            println("Max index: $maxIndex, Counter: $counter")
-            performElimination(finalList)
-            counter++
-        }
-
-        return finalList.firstOrNull()?.firstOrNull()
     }
 
     private fun prettyPrintList(candidates: List<MutableList<Candidate>>) {
