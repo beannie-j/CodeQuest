@@ -5,7 +5,7 @@ class TwoSum {
      * Problem Statement: https://leetcode.com/problems/two-sum/description/
      */
 
-    fun twoSum(nums: IntArray, target: Int): IntArray {
+    fun twoSumBruteForce(nums: IntArray, target: Int): IntArray {
         for (i in 0 until nums.size - 1) {
             val currentNum = nums[i]
             for (j in i + 1 until nums.size) {
@@ -21,7 +21,7 @@ class TwoSum {
         return intArrayOf()
     }
 
-    fun findIndicesForSum(nums: IntArray, target: Int): IntArray {
+    fun twoSum(nums: IntArray, target: Int): IntArray {
         val map = mutableMapOf<Int, Int>()
         for (i in nums.indices) {
             val currentNum = nums[i]
