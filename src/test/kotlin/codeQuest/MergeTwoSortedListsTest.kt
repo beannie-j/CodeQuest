@@ -1,7 +1,7 @@
 import org.example.codeQuest.ListNode
 import org.example.codeQuest.MergeTwoSortedLists
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.Assertions.*
+import org.assertj.core.api.Assertions.*
 
 class MergeTwoSortedListsTest {
 
@@ -11,7 +11,7 @@ class MergeTwoSortedListsTest {
         val list2: ListNode? = null
         val expected: ListNode? = null
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertEquals(expected, actual)
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -20,7 +20,7 @@ class MergeTwoSortedListsTest {
         val list2 = ListNode(1)
         val expected = ListNode(1)
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -29,7 +29,7 @@ class MergeTwoSortedListsTest {
         val list2: ListNode? = null
         val expected = ListNode(1)
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -50,7 +50,7 @@ class MergeTwoSortedListsTest {
         expected.next!!.next!!.next!!.next!!.next = ListNode(6)
 
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -67,7 +67,7 @@ class MergeTwoSortedListsTest {
         expected.next!!.next!!.next = ListNode(5)
 
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -84,7 +84,7 @@ class MergeTwoSortedListsTest {
         expected.next!!.next!!.next = ListNode(6)
 
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -105,7 +105,7 @@ class MergeTwoSortedListsTest {
         expected.next!!.next!!.next!!.next!!.next = ListNode(1)
 
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -116,7 +116,7 @@ class MergeTwoSortedListsTest {
         val expected = ListNode(1)
 
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -127,7 +127,7 @@ class MergeTwoSortedListsTest {
         val expected = ListNode(1)
 
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertTrue(expected.equals(actual))
+        assertThat(actual).isEqualTo(expected)
     }
 
     @Test
@@ -136,6 +136,6 @@ class MergeTwoSortedListsTest {
         val list2: ListNode? = null
         val expected: ListNode? = null
         val actual = MergeTwoSortedLists.mergeTwoLists(list1, list2)
-        assertEquals(expected, actual)
+        assertThat(actual).isEqualTo(expected)
     }
 }
