@@ -1,10 +1,9 @@
 package codeQuest
 
+import org.assertj.core.api.Assertions.assertThat
 import org.example.codeQuest.TwoSum
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-
-import org.junit.jupiter.api.Assertions.*
 
 class TwoSumTest {
 
@@ -20,7 +19,8 @@ class TwoSumTest {
         val nums = intArrayOf(2, 7, 11, 15)
         val target = 9
         val expected = intArrayOf(0, 1)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -28,7 +28,8 @@ class TwoSumTest {
         val nums = intArrayOf(3, 2, 4)
         val target = 6
         val expected = intArrayOf(1, 2)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -36,7 +37,8 @@ class TwoSumTest {
         val nums = intArrayOf(3, 3)
         val target = 6
         val expected = intArrayOf(0, 1)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -44,7 +46,8 @@ class TwoSumTest {
         val nums = intArrayOf(0, 4, 3, 0)
         val target = 0
         val expected = intArrayOf(0, 3)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -52,7 +55,8 @@ class TwoSumTest {
         val nums = intArrayOf(-1, -2, -3, -4, -5)
         val target = -8
         val expected = intArrayOf(2, 4)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -60,7 +64,8 @@ class TwoSumTest {
         val nums = intArrayOf(1, 2, 3, 4, 5)
         val target = 10
         val expected = intArrayOf(3, 4)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -68,7 +73,8 @@ class TwoSumTest {
         val nums = intArrayOf(1, 2, 3, 4, 5)
         val target = 2
         val expected = intArrayOf(0, 1)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -76,7 +82,8 @@ class TwoSumTest {
         val nums = intArrayOf(1, 2)
         val target = 3
         val expected = intArrayOf(0, 1)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -84,7 +91,8 @@ class TwoSumTest {
         val nums = intArrayOf(1)
         val target = 1
         val expected = intArrayOf(0)
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 
     @Test
@@ -92,6 +100,7 @@ class TwoSumTest {
         val nums = intArrayOf(1, 2, 3, 4, 5)
         val target = 20
         val expected = intArrayOf()
-        assertArrayEquals(expected, twoSum.twoSum(nums, target))
+        val actual = twoSum.twoSum(nums, target)
+        assertThat(actual).containsExactly(*expected)
     }
 }
