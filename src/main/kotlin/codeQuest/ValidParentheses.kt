@@ -8,9 +8,7 @@ class ValidParentheses {
      */
     companion object {
         fun isValid(s: String): Boolean {
-            if (s.length == 1) {
-                return false
-            }
+            if (isSingleCharacter(s)) return false
 
             val bracketsMap = mapOf(')' to '(', '}' to '{', ']' to '[')
             val stack = Stack<Char>()
@@ -29,6 +27,10 @@ class ValidParentheses {
                 }
             }
             return stack.isEmpty()
+        }
+
+        private fun isSingleCharacter(s: String): Boolean {
+            return s.length == 1
         }
 
         private fun isOpeningBracket(bracketsMap: Map<Char, Char>, bracket: Char) =
