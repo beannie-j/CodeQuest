@@ -62,9 +62,10 @@ class TwoSumTest {
     @Test
     fun testTwoSum_6() {
         val nums = intArrayOf(1, 2, 3, 4, 5)
-        val target = 10
-        val expected = intArrayOf(3, 4)
+        val target = 7
+        val expected = intArrayOf(1, 4)
         val actual = twoSum.twoSum(nums, target)
+        println(actual.joinToString(prefix = "[", postfix = "]"))
         assertThat(actual).containsExactly(*expected)
     }
 
