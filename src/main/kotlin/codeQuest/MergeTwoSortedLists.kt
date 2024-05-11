@@ -1,6 +1,9 @@
 package org.example.codeQuest
 
 class MergeTwoSortedLists {
+    /**
+     * Problem Statement: https://leetcode.com/problems/merge-two-sorted-lists/description/
+     */
     companion object {
         fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
             val mergedList = ListNode()
