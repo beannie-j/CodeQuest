@@ -9,7 +9,7 @@ class ValidParenthesesTest {
 
     @Test
     fun testValidBrackets1() {
-        assertTrue(isValid("()"))
+        assertTrue(isValid("()[]{}"))
     }
 
     @Test
