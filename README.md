@@ -5,3 +5,4 @@ This repository contains solutions to the coding interview study plan outlined i
 ## Resources
 
 - [Tech Interview Handbook](https://www.techinterviewhandbook.org/)
+- [Grind 75](https://www.techinterviewhandbook.org/grind75)
