@@ -4,9 +4,7 @@ import java.util.*
 import kotlin.math.abs
 
 class MaxHeap {
-
     companion object {
-
         fun lastStoneWeight(weights: Array<Int>): Int {
             val maxHeap = PriorityQueue<Int>(Collections.reverseOrder())
             maxHeap.addAll(weights.toList())
@@ -41,7 +39,7 @@ class MaxHeap {
         }
 
 
-        }
+    }
 
 
 }
